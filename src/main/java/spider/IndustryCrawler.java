@@ -238,15 +238,16 @@ public class IndustryCrawler {
 					for (int i = 1; i <= 15; i++) {
 						if(link.indexOf("_1_1_1")>0||link.indexOf("_2_1_1")>0)
 						{fos2.write((type
-								+ i
+								+"_"+ i
 								+ ","
 								+ link.replace("amp;", "")
 										.replace("_1_1_1", "_1_1_" + i)
 										.replace("_2_1_1", "_2_1_" + i) + "\r\n")
-								.getBytes("GBK"));}
+								.getBytes());}
 						else
 						{
-							fos2.write((type+i+","+link.replace("amp;", "").replace(".shtml", "_2_1_"+i+".html")+"\r\n").getBytes("GBK"));
+							
+							fos2.write((type+"_"+i+","+link.replace("amp;", "").replace(".shtml", "_2_1_"+i+".html")+"\r\n").getBytes());
 						}
 					}
 
